@@ -1,0 +1,12 @@
+# Raw BTS data (too large for GitHub)
+data/raw/
+*.zip
+*.csv
+
+# Database files
+*.duckdb
+*.db
+
+# Excel temp files and Mac junk
+~$*
+.DS_Store
