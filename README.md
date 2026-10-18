@@ -2,8 +2,6 @@
 
 Which Delta routes out of Hartsfield-Jackson Atlanta International Airport (ATL) underperform the ATL network average in operational reliability? What contributes to that underperformance, and what actions could improve it?
 
-> 🚧 **Status:** In progress
-
 ---
 
 ## Scope
