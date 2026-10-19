@@ -19,18 +19,6 @@ Which Delta routes out of Hartsfield-Jackson Atlanta International Airport (ATL)
 
 $$\text{OTP}_{15} = \frac{\text{completed flights arriving} < 15 \text{ min late}}{\text{completed flights}}$$
 
-**Completion rate:** share of scheduled flights that were completed
-
-$$\text{Completion} = \frac{\text{completed flights}}{\text{scheduled flights}}$$
-
-**Average arrival delay:** across all completed flights on a route, with early arrivals counted as 0
-
-$$\bar{d} = \frac{1}{n}\sum_{i=1}^{n}\max(0,\ d_i)$$
-
-**Average late-flight delay:** among completed flights arriving at least 15 minutes late
-
-$$\bar{d}_{\text{late}} = \text{mean}(d_i \mid d_i \ge 15)$$
-
 ### What counts as an underperforming route
 
 A route is flagged if it meets **all** of the following:
