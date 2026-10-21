@@ -34,7 +34,7 @@ SELECT
         WHEN r.scheduled_flights >= 100
         AND r.on_time_rate - h.hub_on_time_rate <= -0.05
         THEN 1 ELSE 0
-    END AS is_underperforming
+    END AS is_bad_quarter
 FROM route_quarter AS r
 JOIN hub_quarter AS h
 ON r.YEAR = h.YEAR AND r.quarter = h.quarter;
@@ -55,4 +55,20 @@ FROM route_quarter_gap
 WHERE scheduled_flights >= 100
 ORDER BY gap_pts ASC
 LIMIT 20;
+
+-- flag any routes that underperformed the hub in at least 2 of the 4 quarters
+CREATE OR REPLACE TABLE flagged_routes AS
+SELECT
+    DEST,
+    SUM(is_bad_quarter) AS bad_quarters,
+    SUM(scheduled_flights) AS total_flights,
+    AVG(CASE WHEN scheduled_flights >= 100 THEN gap END) AS avg_gap
+FROM route_quarter_gap
+GROUP BY DEST
+HAVING SUM(is_bad_quarter) >= 2;
+
+-- check flagged_routes for errors
+SELECT (*) FROM flagged_routes
+ORDER BY avg_gap ASC;
+
 
