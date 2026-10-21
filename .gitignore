@@ -5,6 +5,7 @@ data/raw/
 
 # Database files
 *.duckdb
+*.wal
 *.db
 
 # Excel temp files and Mac junk
