@@ -44,7 +44,7 @@ $$\text{Share}_c = \frac{\text{delay minutes from cause } c}{\text{total delay m
 - Security
 - Late-arriving aircraft
 
-From the dominant causes, I examine factors such as time of day, season, and congestion to form a hypothesis about what drives each gap.
+For each route, the dominant cause (largest share above the ATL hub) is combined with its quarterly and time-of-day gaps to form a hypothesis about what drives the gap.
 
 ---
 
@@ -65,7 +65,5 @@ From the dominant causes, I examine factors such as time of day, season, and con
 - Rank routes and compare delay causes
 
 **Excel**
-- Pivot tables for route and quarterly comparisons
-- Bar charts showing the largest reliability gaps
-- Stacked bars for delay-cause composition
-- A dashboard with filters for quarter, route, and metric
+- Bar chart of the largest reliability gaps
+- Stacked bars of delay-cause composition
